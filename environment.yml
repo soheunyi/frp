@@ -192,7 +192,6 @@ dependencies:
   - zlib=1.2.13=h03a7124_4
   - zstd=1.5.2=h8128057_4
   - pip:
-    - bct==0.0.1
     - colored==1.4.4
     - frozendict==2.3.0
     - ncat==0.1.1

@@ -36,9 +36,7 @@ def virtual_refine(operator, initial_support,
         return over
 
     while virtual_candidate is not None and not timeover():
-        if verbose:
-            print("Testing virtual edge candidate", virtual_candidate)
-
+        
         # test this candidate for virtual edge
         k, i, j = virtual_candidate
         virtual_support = best_support.copy()
@@ -127,8 +125,6 @@ def virtual_refine(operator, initial_support,
                 continue
             if wait > patience:
                 break
-            if verbose:
-                print("\tconsidering cycle:", path)
 
             virtual_support_path = virtual_support.copy()
             path_stable = 1
@@ -325,10 +321,7 @@ def virtual_refine(operator, initial_support,
 
             # compute net change in score after considering this cycle
             path_score = delta_score_initial + delta_score_path
-            if verbose:
-                print("\t\tcycle path score: %0.3e stable:%d" % (path_score, path_stable))
-            # if verbose: print ("\t\tvirtualized support", array2edges(virtual_support_path))
-
+            
             if path_score > best_path_score and path_stable:
                 best_path_score = path_score
                 best_virtual_support = virtual_support_path

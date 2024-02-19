@@ -75,8 +75,6 @@ def run_dglearn(
     )
 
     # perform virtual edge correction
-    if verbose:
-        print("virtual edge correction...")
     learned_support = virtual_refine(
         manager,
         learned_support,
@@ -87,8 +85,6 @@ def run_dglearn(
     )
 
     # remove any reducible edges
-    if verbose:
-        print("reduce support...")
     learned_support = reduce_support(learned_support, fill_diagonal=False)
 
     dglearn_time = time.time() - start_time

@@ -1,6 +1,5 @@
 from typing import Union
 import numpy as np
-import torch
 import igraph as ig
 
 
